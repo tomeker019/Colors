@@ -13,6 +13,7 @@
     </Window.DataContext>
     <Window.Resources>
         <conv:ColorConverter  x:Key="ColorConverter" />
+        <conv:RGBSplit  x:Key="RGBSplit" />
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -37,12 +38,13 @@
 
         <Label HorizontalAlignment="Left" Margin="50,292,0,0" VerticalAlignment="Top" Content="Brightness" />
         <ProgressBar HorizontalAlignment="Left" Height="10" Margin="150,250,0,0" VerticalAlignment="Top" Width="250" Minimum="0" Maximum="255" Value="{Binding Brightness, Mode=OneWay}"/>
-        <Label HorizontalAlignment="Left" Margin="426,242,0,0" VerticalAlignment="Top" Content="{Binding Brightness, Converter={StaticResource ColorConverter}}" />
+        <Label HorizontalAlignment="Left" Margin="426,242,0,0" VerticalAlignment="Top" Content="{Binding Brightness}" />
 
         <Rectangle Fill="{Binding RGB}" HorizontalAlignment="Left" Height="100" Margin="638,59,0,0" Stroke="Black" VerticalAlignment="Top" Width="100">
         </Rectangle>
 
-        <Label Content="{Binding RGB}" HorizontalAlignment="Left" Margin="669,181,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding RGB, Converter={StaticResource ColorConverter}}" HorizontalAlignment="Left" Margin="669,180,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding RGB, Converter={StaticResource RGBSplit}}" HorizontalAlignment="Left" Margin="669,220,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

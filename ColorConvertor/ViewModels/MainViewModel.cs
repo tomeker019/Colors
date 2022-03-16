@@ -22,8 +22,6 @@ namespace ColorConvertor.ViewModels
         private byte _blue;
         private SolidColorBrush _rgb;
 
-
-
         public MainViewModel()
         {
             Red = 100;
@@ -81,21 +79,21 @@ namespace ColorConvertor.ViewModels
             
             get
             {
-                return new SolidColorBrush(Color.FromArgb(255, Red, Green, Blue));
+                return new SolidColorBrush(Color.FromRgb(Red, Green, Blue));
             }
         }
         public double Luminance
         {
             get
             {
-                return (0.2126 * Red + 0.7152 * Green + 0.0722 * Blue);
+                return Math.Round((0.2126 * Red + 0.7152 * Green + 0.0722 * Blue), 2);
             }
         }
         public double Brightness
         {
             get
             {
-                return (0.299 * Red + 0.287 * Green + 0.114 * Blue);
+                return Math.Round((0.299 * Red + 0.287 * Green + 0.114 * Blue), 2);
             }
         }
     }

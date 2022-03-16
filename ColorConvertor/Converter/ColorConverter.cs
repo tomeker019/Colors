@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using System.Windows.Media;
 
 namespace ColorConvertor.Converter
 {
@@ -12,7 +13,8 @@ namespace ColorConvertor.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return Math.Round((double)value, 2);
+            return value.ToString();
+            
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
